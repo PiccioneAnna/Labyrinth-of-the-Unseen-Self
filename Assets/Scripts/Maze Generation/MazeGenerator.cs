@@ -8,13 +8,17 @@ public class MazeGenerator : MonoBehaviour
     [SerializeField] private MazeCell _mazeCellPrefab;
     [SerializeField] private int _mazeWidth;
     [SerializeField] private int _mazeHeight;
+    private int maxRemovedWalls;
+    private double percentModifier;
 
     private MazeCell[,] _mazeGrid;
 
     // Start is called before the first frame update
-    IEnumerator Start()
+    public void Start()
     {
+        percentModifier = Random.Range(.65f, .75f);
         _mazeGrid = new MazeCell[_mazeWidth, _mazeHeight];
+        maxRemovedWalls = (int)(percentModifier * (_mazeWidth * _mazeHeight));
 
         for (int x = 0; x < _mazeWidth; x++)
         {
@@ -24,10 +28,11 @@ public class MazeGenerator : MonoBehaviour
             }
         }
 
-        yield return GenerateMaze(null, _mazeGrid[0, 0]);
+        GenerateMaze(null, _mazeGrid[0, 0]);
+        RandomWallRemoval();
     }
 
-    private IEnumerator GenerateMaze(MazeCell previousCell, MazeCell currentCell)
+    private void GenerateMaze(MazeCell previousCell, MazeCell currentCell)
     {
         currentCell.Visit();
         ClearWalls(previousCell, currentCell);
@@ -42,10 +47,22 @@ public class MazeGenerator : MonoBehaviour
 
             if (nextCell != null)
             {
-                yield return GenerateMaze(currentCell, nextCell);
+                GenerateMaze(currentCell, nextCell);
             }
 
         } while (nextCell != null);
+
+    }
+
+    private void RandomWallRemoval()
+    {
+        // Randomly clear walls within maze
+        int index = Random.Range(0, maxRemovedWalls);
+
+        for (int i = 0; i < index; i++)
+        {
+            GetRandomCell().ClearWalls();
+        }
     }
 
     private void ClearWalls(MazeCell previousCell, MazeCell currentCell)
@@ -89,6 +106,11 @@ public class MazeGenerator : MonoBehaviour
         var unvisitedCells = GetUnvisitedCells(currentCell);
 
         return unvisitedCells.OrderBy(_ => Random.Range(1, 10)).FirstOrDefault();
+    }
+
+    private MazeCell GetRandomCell()
+    {
+        return _mazeGrid[Random.Range(1, _mazeWidth-1), Random.Range(1, _mazeHeight-1)];
     }
 
     private IEnumerable<MazeCell> GetUnvisitedCells(MazeCell currentCell)

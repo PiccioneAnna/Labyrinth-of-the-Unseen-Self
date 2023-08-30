@@ -19,6 +19,14 @@ public class MazeCell : MonoBehaviour
         _unvisitedTile.SetActive(false);
     }
 
+    public void ClearWalls()
+    {
+        _leftWall.SetActive(false);
+        _rightWall.SetActive(false);
+        _topWall.SetActive(false);
+        _bottomWall.SetActive(false);
+    }
+
     public void ClearLeftWall()
     {
         _leftWall.SetActive(false);
