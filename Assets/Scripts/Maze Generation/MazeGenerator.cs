@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class MazeGenerator : MonoBehaviour
 {
+    public GameObject MazeParent;
+
     [SerializeField] private MazeCell _mazeCellPrefab;
     [SerializeField] private int _mazeWidth;
     [SerializeField] private int _mazeHeight;
@@ -24,7 +26,7 @@ public class MazeGenerator : MonoBehaviour
         {
             for (int y = 0; y < _mazeHeight; y++)
             {
-                _mazeGrid[x,y] = Instantiate(_mazeCellPrefab, new Vector3(x, y, 0), Quaternion.identity);
+                _mazeGrid[x,y] = Instantiate(_mazeCellPrefab, new Vector3(x, y, 0), Quaternion.identity, MazeParent.transform);
             }
         }
 

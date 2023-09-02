@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 1637267926997590632}
   - component: {fileID: 6296912913395554459}
   - component: {fileID: 2864770243951925503}
-  - component: {fileID: 1748087336521988633}
+  - component: {fileID: 5604663234810975074}
+  - component: {fileID: 6098431430274711653}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -198,6 +199,38 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 361a93db-4825-4915-b9b9-2be2f162fde3
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2864770243951925503}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnRun
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7939733b-74fd-4f77-8b69-513eac35c172
+    m_ActionName: Player/Run[/Keyboard/leftShift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2864770243951925503}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 712fa807-142f-448e-90b6-0583f177dac8
+    m_ActionName: Player/Jump[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -215,9 +248,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 038e2cb92e2f7864783533a5da4be000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 5
---- !u!61 &1748087336521988633
-BoxCollider2D:
+  walkSpeed: 2.5
+  runSpeed: 5
+  jumpImpulse: 4
+  _isMoving: 0
+  _isRunning: 0
+--- !u!114 &5604663234810975074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637267926997590635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c74308e5e53c7e84da5bb1c5c4f86c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactFilter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  groundDistance: 0.05
+  wallDistance: 0.2
+  ceilingDistance: 0.05
+  _isGrounded: 1
+  _isOnWall: 1
+  _isOnCeiling: 1
+--- !u!70 &6098431430274711653
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -229,16 +298,6 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1.2265625}
-    newSize: {x: 1, y: 1.2265625}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.2265625}
-  m_EdgeRadius: 0
+  m_Offset: {x: -0.036628723, y: 0.038661957}
+  m_Size: {x: 0.2511902, y: 0.95389557}
+  m_Direction: 0
