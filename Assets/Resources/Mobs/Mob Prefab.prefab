@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8681833736455692025}
   - component: {fileID: -3903534693180109180}
   m_Layer: 0
-  m_Name: Mob
+  m_Name: Mob Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,3 +153,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0839d9670a9b64143893427eaabb4d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mob: {fileID: 0}
+  potentialMobs:
+  - {fileID: 11400000, guid: 51f4741aeb560c447acbed19a2a23269, type: 2}
+  - {fileID: 11400000, guid: 1346b268ab6f85c4ebd18d30b1ac0f0f, type: 2}
+  - {fileID: 11400000, guid: 3e8cd81c1776a004f8b31eceebececee, type: 2}
+  - {fileID: 11400000, guid: 7be8c3e606190ef4c816c0561b3e478b, type: 2}
+  - {fileID: 11400000, guid: f93554a236105954e8c9c0b1e361e271, type: 2}
+  FramesPerSecond: 2

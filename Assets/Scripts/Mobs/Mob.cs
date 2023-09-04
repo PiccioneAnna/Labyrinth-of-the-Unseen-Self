@@ -6,12 +6,11 @@ using UnityEngine;
 public class Mob : ScriptableObject
 {
     [Header("Internal")]
-    public float speed;
-    public int damage;
-    public float timeToAttack;
+    public float speed = .5f;
+    public int damage = 1;
+    public float timeToAttack = 2f;
 
     [Header("External")]
     public string id;
-    public Sprite sprite;
-    public Animation idleAnimation;
+    public Sprite[] sprites;
 }
