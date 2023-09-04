@@ -11,7 +11,7 @@ public class MobPrefab : MonoBehaviour
     public float FramesPerSecond = 20;  // adjust to suit
     public Light2D glow;
 
-    private void Start()
+    private void Awake()
     {
         mob = potentialMobs[Random.Range(0, potentialMobs.Length)];
         glow = GetComponent<Light2D>();

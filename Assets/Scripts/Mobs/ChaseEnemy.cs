@@ -19,6 +19,8 @@ public class ChaseEnemy : MonoBehaviour
         player = GameManager.instance.character.transform;
         attackTimer = Random.Range(0, timeToAttack);
 
+        mob = GetComponent<MobPrefab>().mob;
+
         speed = mob.speed;
         damage = mob.damage;
         timeToAttack = mob.timeToAttack;
