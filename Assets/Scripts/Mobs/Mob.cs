@@ -13,4 +13,6 @@ public class Mob : ScriptableObject
     [Header("External")]
     public string id;
     public Sprite[] sprites;
+    public Color glowColor;
+    public int glowRadius;
 }

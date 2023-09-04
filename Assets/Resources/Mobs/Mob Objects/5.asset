@@ -19,3 +19,5 @@ MonoBehaviour:
   sprites:
   - {fileID: -239680571, guid: d9e11c32122ea5f4997cdf7ec054cc56, type: 3}
   - {fileID: -1699845260, guid: d9e11c32122ea5f4997cdf7ec054cc56, type: 3}
+  glowColor: {r: 1, g: 0.514151, b: 0.764415, a: 1}
+  glowRadius: 0
