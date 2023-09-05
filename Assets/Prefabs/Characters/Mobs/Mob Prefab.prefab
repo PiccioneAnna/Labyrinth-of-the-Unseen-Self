@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: -8681833736455692025}
   - component: {fileID: -3903534693180109180}
   - component: {fileID: 6208759619509867831}
+  - component: {fileID: 9164308025838880649}
+  - component: {fileID: 6800413003842377259}
   m_Layer: 0
   m_Name: Mob Prefab
   m_TagString: Untagged
@@ -242,3 +244,28 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &9164308025838880649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5326664940597239885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 975b7d33e85440342af7f2548f848a99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 10
+--- !u!114 &6800413003842377259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5326664940597239885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb0e567667078ac489f8bdddcf2564b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

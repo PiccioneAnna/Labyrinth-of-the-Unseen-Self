@@ -222,6 +222,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 1260640705}
   followTarget: {fileID: 835754496}
+--- !u!1 &109588938
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 109588939}
+  - component: {fileID: 109588940}
+  m_Layer: 0
+  m_Name: Bow Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &109588939
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109588938}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.381, y: 0.18, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 835754496}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &109588940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109588938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43413e9fc6f180f48829bc1aa51f3ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canFire: 1
+  maxProjCount: 1
+  fireStep: 0.2
+  launchPoint: {fileID: 109588939}
+  projectilePrefab: {fileID: 1297221331970467067, guid: dd2e501a24ce3d04992a2217864fbc38, type: 3}
+  projectileManager: {fileID: 915795675}
 --- !u!1 &220872006
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,6 +486,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1637267926997590422, guid: 4d6e23c03f64af342a861e43e4fc2cb1, type: 3}
   m_PrefabInstance: {fileID: 1637267927806016406}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &915795675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 915795676}
+  m_Layer: 0
+  m_Name: Projectiles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &915795676
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915795675}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.8288255, y: 5.125107, z: -0.0013457244}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &979058353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1717,7 +1798,7 @@ GameObject:
   - component: {fileID: 2020211848}
   - component: {fileID: 2020211850}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1783,8 +1864,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020211847}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.8408, y: 24.7086, z: 0}
-  m_LocalScale: {x: 73.240845, y: 49.572853, z: 37.556435}
+  m_LocalPosition: {x: 36.6559, y: 24.6162, z: 0}
+  m_LocalScale: {x: 73.60705, y: 49.756275, z: 37.556435}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2031,8 +2112,44 @@ PrefabInstance:
       value: 0.036945343
       objectReference: {fileID: 0}
     - target: {fileID: 2864770243951925503, guid: 4d6e23c03f64af342a861e43e4fc2cb1, type: 3}
+      propertyPath: runSpeed
+      value: 3.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2864770243951925503, guid: 4d6e23c03f64af342a861e43e4fc2cb1, type: 3}
+      propertyPath: walkSpeed
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2864770243951925503, guid: 4d6e23c03f64af342a861e43e4fc2cb1, type: 3}
       propertyPath: jumpImpulse
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296912913395554459, guid: 4d6e23c03f64af342a861e43e4fc2cb1, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296912913395554459, guid: 4d6e23c03f64af342a861e43e4fc2cb1, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296912913395554459, guid: 4d6e23c03f64af342a861e43e4fc2cb1, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 109588940}
+    - target: {fileID: 6296912913395554459, guid: 4d6e23c03f64af342a861e43e4fc2cb1, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296912913395554459, guid: 4d6e23c03f64af342a861e43e4fc2cb1, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FireProjectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296912913395554459, guid: 4d6e23c03f64af342a861e43e4fc2cb1, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ProjectileLauncher, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296912913395554459, guid: 4d6e23c03f64af342a861e43e4fc2cb1, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d6e23c03f64af342a861e43e4fc2cb1, type: 3}

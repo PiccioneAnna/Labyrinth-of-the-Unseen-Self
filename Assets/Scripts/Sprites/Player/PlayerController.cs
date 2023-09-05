@@ -146,6 +146,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnRangedAttack(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            //animator.SetTrigger(AnimationStrings.shootBow);
+        }
+    }
+
     private void WallSlide()
     {
         if(touchingDirections.IsOnWall && !touchingDirections.IsGrounded && moveInput.x != 0f)

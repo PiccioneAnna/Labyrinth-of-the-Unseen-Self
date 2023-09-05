@@ -21,7 +21,12 @@ public class MobPrefab : MonoBehaviour
     // poor man's cheesy-sprite sequencer. Put this on the GameObject with the SpriteRenderer
     void Update()
     {
-        if(mob != null)
+        AnimateSprite();
+    }
+
+    private void AnimateSprite()
+    {
+        if (mob != null)
         {
             int frame = (int)(Time.time * FramesPerSecond);
 
